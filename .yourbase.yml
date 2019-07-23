@@ -12,6 +12,7 @@ build_targets:
       - REQUIRE_SINGLE=true 
     commands:
       - apt -y install g++-6 socat
+      - npm install
       - npm run ci-test-10
      
     sources:
