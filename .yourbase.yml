@@ -1,0 +1,33 @@
+dependencies:
+  build:
+    - node:10.15.1
+    - python:3.6.3
+    
+build_targets:
+  - name: test-v10
+    container:
+      image: yourbase/yb_ubuntu:18.04
+    env:
+      - CXX=g++-6
+      - REQUIRE_SINGLE=true 
+    commands:
+      - apt -y install g++-6 socat
+      - npm run ci-test-10
+     
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - socat
+      - g++-6
+      
+ ci:
+   builds:
+     - name: test
+       build_target: test-v10
+      
+      
+    
+ #   - TARGET=test
+ #  - TARGET=test-stress
+ #  - TARGET=test-multi
+#    - TARGET=test-multi-remote
