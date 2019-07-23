@@ -20,10 +20,10 @@ build_targets:
       - socat
       - g++-6
       
- ci:
-   builds:
-     - name: test
-       build_target: test-v10
+ci:
+  builds:
+    - name: test
+      build_target: test-v10
       
       
     
